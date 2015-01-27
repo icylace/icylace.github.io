@@ -1,0 +1,58 @@
+
+// =======================
+// STANDARD PAGE STRUCTURE
+// =======================
+
+
+//
+// - #container
+//   - #page
+//     - #header
+//       - #branding
+//         - #logo
+//       - #search
+//     - #content
+//       - #main
+//       - #sidebar-first
+//       - #sidebar-second
+//     - #footer
+//       - #site-info
+//         - #copyright
+//         - #credit
+//
+
+
+#container {
+  @extend %clear;
+  max-width: 100%;
+}
+
+#page {
+  background: $color-white;
+  margin:     0 auto;
+  padding:    $layout-border-width;
+  width:      $layout-page-width;
+}
+#header {
+  margin-bottom:  1em;
+  text-align:     center;
+}
+#branding {}
+#logo {}
+
+#search {}
+
+#content {
+  float:  left;
+  width:  50%;
+}
+#main {}
+#sidebar {
+  float: right;
+  width: 50%;
+}
+
+#footer {}
+#site-info {}
+#copyright {}
+#credit {}

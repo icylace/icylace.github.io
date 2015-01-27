@@ -1,0 +1,6 @@
+package     = ramartin.net
+name        = Happy Birthday Carrie
+description = Birthday presents for Carrie Joyce.
+core        = 6.x
+
+dependencies[] = imagecache

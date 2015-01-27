@@ -1,0 +1,77 @@
+
+// ======
+// COLORS
+// ======
+
+
+//
+// Color naming source:
+// http://chir.ag/projects/name-that-color/
+//
+
+// http://www.colourlovers.com/palette/694737/Thought_Provoking
+// http://www.colourlovers.com/palette/580974/Adrift_in_Dreams
+// http://www.colourlovers.com/palette/77121/Good_Friends
+// http://www.colourlovers.com/palette/443995/i_demand_a_pancake
+// http://www.colourlovers.com/palette/728391/Dig_My_Olive_Branch
+
+// Base palette.
+
+$color-black:         #000;
+$color-black-russian: #002;
+$color-denim:         rgb(25, 112, 179);
+$color-flush-orange:  #FF7B00;
+$color-gallery:       #EEE;
+$color-green:         #0C0;
+$color-matterhorn:    #594247;
+$color-merlot:        rgb(138, 24, 33);
+$color-plantation:    rgb(41, 94, 82);
+$color-silver:        #BBB;
+$color-stark-white:   #E8D7C4;
+$color-steel-blue:    #4F88BA;
+$color-taupe-gray:    #B4B298;
+$color-tundora:       #444;
+$color-victoria:      rgb(92, 57, 122);
+$color-white:         #FFF;
+
+$color-stark-white-darkened:    darken($color-stark-white, 40%);
+$color-stark-white-darkened-2:  darken($color-stark-white, 20%);
+
+// Color usage.
+
+$color-body:          $color-tundora;
+$color-body-bg:       $color-stark-white;
+$color-link:          $color-stark-white-darkened;
+$color-link-hover:    $color-stark-white-darkened-2;
+$color-nav:           mix($color-white, $color-matterhorn, 20%);
+$color-nav-hover:     lighten($color-nav, 10%);
+$color-nav-active-bg: mix($color-white, $color-nav, 90%);
+$color-button:        mix($color-body, $color-steel-blue, 40%);
+$color-button-bg:     mix($color-white, $color-steel-blue, 80%);
+$color-button-border: $color-steel-blue;
+$color-button-hover:  $color-steel-blue;
+$color-table-border:  $color-plantation;
+$color-table-heading: $color-victoria;
+$color-selection:     $color-white;
+$color-selection-bg:  #FF69B4;
+
+
+// -----------------------------------------------------------------------------
+
+
+$body-font:       $font-cambria;
+$body-font-size:  18px;
+
+$image-bg: url(../images/bg.jpg);
+
+
+// -----------------------------------------------------------------------------
+
+
+// Layout.
+
+$layout-page-width:         1000px;
+$layout-signin-page-width:  700px;
+$layout-border-width:       15px;
+$layout-sidebar-width:      310px;
+$layout-content-width:      $layout-page-width - $layout-sidebar-width - $layout-border-width;

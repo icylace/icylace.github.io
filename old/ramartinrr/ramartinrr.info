@@ -1,0 +1,8 @@
+package     = ramartin.net
+name        = Gabor's Game - Raising Resilience
+description = Gabor's game.
+core        = 7.x
+
+files[] = ramartinrr.module
+
+stylesheets[all][] = styles/ramartinrr.css

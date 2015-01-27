@@ -1,0 +1,280 @@
+<?php
+/**
+
+- thank you page
+
+ */
+
+
+/**
+ * @file
+ * Support for the Shersnow Family.
+ */
+
+
+// -----------------------------------------------------------------------------
+
+
+/**
+ * Implements hook_menu().
+ */
+function ramartinshersnow_menu() {
+  $items = array();
+
+  $items['shersnow'] = array(
+    'title'           => 'Support for the Shersnow Family',
+    'page callback'   => '_ramartinshersnow_page',
+    'access callback' => TRUE,
+    'type'            => MENU_CALLBACK,
+  );
+  /* *
+  $items['shersnow/thankyou'] = array(
+    'title'           => 'Support for the Shersnow Family',
+    'page callback'   => '_ramartinshersnow_page_thankyou',
+    'access callback' => TRUE,
+    'type'            => MENU_CALLBACK,
+  );
+  /* */
+
+  return $items;
+}
+
+
+// -----------------------------------------------------------------------------
+
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function ramartinshersnow_preprocess_page(&$vars, $hook) {
+  $vars['theme_hook_suggestions'][] = 'page__shersnow_thankyou';
+}
+
+
+// -----------------------------------------------------------------------------
+
+
+/**
+ * Implements hook_theme().
+ */
+function ramartinshersnow_theme($existing, $type, $theme, $path) {
+  return array(
+    'block__shersnow'         => array('path' => $path . '/templates', 'template' => 'block--shersnow'),
+    'html__shersnow'          => array('path' => $path . '/templates', 'template' => 'html--shersnow'),
+    'page__shersnow'          => array('path' => $path . '/templates', 'template' => 'page--shersnow'),
+    /* *
+    'page__shersnow_thankyou' => array('path' => $path . '/templates', 'template' => 'page--shersnow-thankyou'),
+    /* */
+
+    /**
+     * http://www.pepperpotdesign.co.uk/blog/rendering-drupal-7-image-styles-outside-of-the-fil/
+     */
+    'image_style_outside_files' => array(
+      'variables' => array(
+        'style_name'  => null,
+        'path'        => null,
+        'alt'         => '',
+        'title'       => null,
+        'attributes'  => array(),
+      ),
+    ),
+  );
+}
+
+
+// -----------------------------------------------------------------------------
+
+data = {
+  images: [
+    "5820_1130209651285_2344805_n.jpg",
+    "6220_1110856287463_4430424_n.jpg",
+    "46867_1406697203301_5271140_n.jpg",
+    "46867_1406697243302_2968162_n.jpg",
+    "47718_1406700963395_7845519_n.jpg",
+    "47718_1406701163400_4455216_n.jpg",
+    "47742_1419131794158_4575906_n.jpg",
+    "59052_1419087793058_3591679_n.jpg",
+    "150329_1482281532862_6342179_n.jpg",
+    "163942_1567423101348_589306_n.jpg",
+    "168457_1567429821516_2212076_n.jpg",
+    "172420_1656582130268_4549375_o.jpg",
+    "194748_2051593725311_2126456988_o.jpg",
+    "240801_1757079202632_5517751_o.jpg",
+    "242479_1795830211383_5639131_o.jpg",
+    "246816_3615232375300_746960375_n.jpg",
+    "248578_1805650816892_8121488_n.jpg",
+    "262040_1906112368368_2214013_n.jpg",
+    "268672_1898041446600_783091_n.jpg",
+    "292705_2051624686085_988557212_n.jpg",
+    "310513_2190724723499_1006110885_n.jpg",
+    "330710_2021497972936_3090099_o.jpg",
+    "405107_3103394579675_489589227_n.jpg",
+    "405258_2572082657209_2135673166_n.jpg"
+  ]
+}
+
+function ramartinshersnow_page_alter(&$page) {
+  {% for image in data.images %}
+    # image_style_outside_files
+    <img src="{{ '/images/gallery/' + image | prepend: site.baseurl }}" alt="" />
+  {% endfor %}
+
+  $path           = drupal_get_path('module', 'ramartinshersnow');
+  $image_markups  = array();
+
+  foreach ($images as $image) {
+    $image_markups[] = theme('image_style_outside_files', array(
+      'style_name'  => 'ramartinshersnow_gallery_item',
+      'path'        => $path . '/images/gallery/' . $image,
+    ));
+  }
+
+  $page['sidebar'] = array(
+    'ramartinshersnow_images' => array(
+      '#markup' => '<ul>' . implode(PHP_EOL, $image_markups) . '</ul>',
+    ),
+  );
+}
+
+
+// -----------------------------------------------------------------------------
+
+
+/**
+ * http://www.pepperpotdesign.co.uk/blog/rendering-drupal-7-image-styles-outside-of-the-fil/
+ */
+
+/**
+ * This theme function is designed to deal with the limitation that
+ * theme_image_style does not work with images outside the files directory.
+ *
+ * Usage is the same as theme_image_style.
+ *
+ * @param $variables
+ */
+function theme_image_style_outside_files($variables) {
+  $styled_path = image_style_path($variables['style_name'], $variables['path']);
+  if (!file_exists($styled_path)) {
+    $style = image_style_load($variables['style_name']);
+    image_style_create_derivative($style, $variables['path'], $styled_path);
+  }
+  $variables['path'] = $styled_path;
+  return theme('image', $variables);
+}
+
+
+// -----------------------------------------------------------------------------
+
+
+function _ramartinshersnow_page() {
+  $path = drupal_get_path('module', 'ramartinshersnow');
+  drupal_add_css($path . '/styles/ramartinshersnow.css');
+
+  return '';
+}
+
+
+// -----------------------------------------------------------------------------
+
+
+/* *
+function _ramartinshersnow_page_thankyou() {
+  $path = drupal_get_path('module', 'ramartinshersnow');
+  drupal_add_css($path . '/styles/ramartinshersnow.css');
+
+  return theme('page__shersnow_thankyou');
+}
+/* */
+
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+
+function ramartinshersnow_image_default_styles() {
+  $styles = array();
+
+  $styles['ramartinshersnow_header'] = array(
+    'effects' => array(
+      array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 360,
+          'height' => 280,
+        ),
+        'weight' => 0,
+      ),
+    ),
+  );
+
+  $styles['ramartinshersnow_gallery_item'] = array(
+    'effects' => array(
+      array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 225,
+          'height' => 140,
+        ),
+        'weight' => 0,
+      ),
+    ),
+  );
+
+  $styles['ramartinshersnow_footer'] = array(
+    'effects' => array(
+      array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 330,
+          'height' => 280,
+          'upscale' => 1,
+        ),
+        'weight' => 0,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+
+
+
+  foreach ($images as $image) {
+    $image_markups[] = theme('image_style_outside_files', array(
+      'style_name'  => 'ramartinshersnow_gallery_item',
+      'path'        => $path . '/images/gallery/' . $image,
+    ));
+  }
+
+
+  {% for image in images %}
+    # image_style_outside_files
+    <img src="/images/gallery/{{ image | prepend: site.baseurl }}" alt="" />
+  {% endfor %}
+
+
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+    {% for post in site.posts limit:10 %}
+      <item>
+        <title>{{ post.title | xml_escape }}</title>
+        <description>{{ post.content | xml_escape }}</description>
+        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
+        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
+        {% for tag in post.tags %}
+        <category>{{ tag | xml_escape }}</category>
+        {% endfor %}
+        {% for cat in post.categories %}
+        <category>{{ cat | xml_escape }}</category>
+        {% endfor %}
+      </item>
+    {% endfor %}
