@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: null
 ---
 
 <div class="main-wrapper">
@@ -11,14 +11,14 @@ layout: default
     <div class="main-content-wrapper">
       <div class="main-content">
 
-        <div markdown="1">
-          # Ron Martinez
+<div markdown="1">
+# Ron Martinez
 
-          ## is doing something...
+## is doing something...
 
-          - [LinkedIn](http://www.linkedin.com/in/icylace)
-          - [GitHub](https://github.com/icylace)
-        </div>
+- [LinkedIn](http://www.linkedin.com/in/icylace)
+- [GitHub](https://github.com/icylace)
+</div>
 
       </div>
     </div>
