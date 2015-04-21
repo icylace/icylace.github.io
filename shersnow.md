@@ -62,22 +62,22 @@ the_donated_amounts:
 
     <?php
       print theme('image_style_outside_files', array(
-        'style_name'  => 'ramartinshersnow_gallery_item',
-        'path'        => $path . '/images/topleft.jpg',
+        'style_name' => 'ramartinshersnow_gallery_item',
+        'path'       => $path . '/images/topleft.jpg',
       ));
     ?>
     <?php
       print theme('image_style_outside_files', array(
-        'style_name'  => 'ramartinshersnow_header',
-        'path'        => $path . '/images/topcenter.jpg',
-        'alt'         => 'Mike and Tanya',
-        'title'       => 'Mike and Tanya',
+        'style_name' => 'ramartinshersnow_header',
+        'path'       => $path . '/images/topcenter.jpg',
+        'alt'        => 'Mike and Tanya',
+        'title'      => 'Mike and Tanya',
       ));
     ?>
     <?php
       print theme('image_style_outside_files', array(
-        'style_name'  => 'ramartinshersnow_gallery_item',
-        'path'        => $path . '/images/topright.jpg',
+        'style_name' => 'ramartinshersnow_gallery_item',
+        'path'       => $path . '/images/topright.jpg',
       ));
     ?>
   </div>
@@ -210,20 +210,20 @@ Aunt Jennie and Tanya
   <div id="footer">
     <?php
       print theme('image_style_outside_files', array(
-        'style_name'  => 'ramartinshersnow_footer',
-        'path'        => $path . '/images/BaldSisters.jpg',
+        'style_name' => 'ramartinshersnow_footer',
+        'path'       => $path . '/images/BaldSisters.jpg',
       ));
     ?>
     <?php
       print theme('image_style_outside_files', array(
-        'style_name'  => 'ramartinshersnow_footer',
-        'path'        => $path . '/images/248449_1805650656888_3157752_n.jpg',
+        'style_name' => 'ramartinshersnow_footer',
+        'path'       => $path . '/images/248449_1805650656888_3157752_n.jpg',
       ));
     ?>
     <?php
       print theme('image_style_outside_files', array(
-        'style_name'  => 'ramartinshersnow_footer',
-        'path'        => $path . '/images/413159_2967130413156_2028020588_o_crop.jpg',
+        'style_name' => 'ramartinshersnow_footer',
+        'path'       => $path . '/images/413159_2967130413156_2028020588_o_crop.jpg',
       ));
     ?>
     <p><small>Tanya (left) with Jennie (right)</small></p>
