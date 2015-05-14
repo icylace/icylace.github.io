@@ -1,6 +1,6 @@
 ---
-layout:    shersnow/default
-permalink: shersnow/
+layout:    default
+# permalink: shersnow/
 
 the_donated_amounts:
   - 97      #  xfer to mike dec 26th 2013
@@ -36,7 +36,7 @@ the_donated_amounts:
   # UPDATE TOTAL of non-paypal is 2775 + tan withdrew 9284 = 12,059
 ---
 
-# skldjfhskljfh dlkfjhadls kfas ldkf alsdk jfhl
+{{ page.the_donated_amounts }}
 
 <div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php print render($title_prefix); ?>
@@ -46,8 +46,6 @@ the_donated_amounts:
   <?php print render($title_suffix); ?>
   <?php print $content; ?>
 </div>
-
-# shg fdhd fghd fghdfgh
 
 <div id="page">
   <div id="header">
@@ -65,16 +63,12 @@ the_donated_amounts:
         'style_name' => 'ramartinshersnow_gallery_item',
         'path'       => $path . '/images/topleft.jpg',
       ));
-    ?>
-    <?php
       print theme('image_style_outside_files', array(
         'style_name' => 'ramartinshersnow_header',
         'path'       => $path . '/images/topcenter.jpg',
         'alt'        => 'Mike and Tanya',
         'title'      => 'Mike and Tanya',
       ));
-    ?>
-    <?php
       print theme('image_style_outside_files', array(
         'style_name' => 'ramartinshersnow_gallery_item',
         'path'       => $path . '/images/topright.jpg',

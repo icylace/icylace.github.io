@@ -1,4 +1,5 @@
 # Site settings
+name: ramartin.net the site
 title: Ron Martinez Is Doing Something
 email: ramartin.net@gmail.com
 description: >
@@ -6,7 +7,35 @@ description: >
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://ramartin.net" # the base hostname & protocol for your site
 twitter_username: icylace
-github_username:  icylace
+github_username: icylace
+
+source: src
+destination: build
 
 # Build settings
 markdown: kramdown
+
+highlighter: pygments
+# highlighter: rouge
+# highlighter: null
+
+include: [.htaccess]
+timezone: America/New_York
+encoding: utf-8
+host: ramartin.dev
+# port: 80
+
+defaults:
+  - scope:
+      path: ""        # An empty string here means all files in the project.
+      type: posts
+    values:
+      layout: default
+  - scope:
+      path: poetry
+      type: pages
+    values:
+      layout: default
+
+# kramdown:
+#   input: GFM
