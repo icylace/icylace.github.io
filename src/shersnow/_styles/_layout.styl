@@ -1,0 +1,43 @@
+layout_page_width        = 1000px
+layout_signin_page_width = 700px
+layout_border_width      = 15px
+layout_sidebar_width     = 310px
+layout_content_width     = layout_page_width - layout_sidebar_width - layout_border_width
+
+#container
+  @extend %clear
+  max-width 100%
+
+#page
+  background color_white
+  margin     0 auto
+  padding    layout_border_width
+  width      layout_page_width
+
+#header
+  margin-bottom 1em
+  text-align    center
+
+#branding {}
+
+#logo {}
+
+#search {}
+
+#content
+  float left
+  width 50%
+
+#main {}
+
+#sidebar
+  float right
+  width 50%
+
+#footer {}
+
+#site-info {}
+
+#copyright {}
+
+#credit {}

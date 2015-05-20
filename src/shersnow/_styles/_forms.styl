@@ -1,0 +1,229 @@
+form {}
+
+//
+// Only give a pointer cursor for labels if they're linked to a form control.
+// http://davidwalsh.name/css-enhancements-user-experience#comment-9327
+//
+label[for]
+input[type="checkbox"]
+input[type="radio"]
+select
+  cursor pointer
+
+fieldset
+  margin                 0 0 layout_border_width
+  padding                layout_border_width
+  -webkit-margin-end     0
+  -webkit-margin-start   0
+  -webkit-padding-after  0
+  -webkit-padding-before 0
+  -webkit-padding-end    0
+  -webkit-padding-start  0
+  :last-child
+    margin-bottom 0
+
+legend
+  padding               0 (layout_border_width / 2)
+  -webkit-padding-start 0
+  -webkit-padding-end   0
+
+  // http://www.456bereastreet.com/archive/201210/how_to_line_wrap_text_in_legend_elements_even_in_ie/
+  display     table         // Enable line-wrapping in IE8+.
+  white-space normal        // Enable line-wrapping in old versions of Firefox.
+
+// input, select, textarea,
+// ::-webkit-datetime-edit,
+// ::-webkit-datetime-edit-fields-wrapper,
+// ::-webkit-datetime-edit-text,
+// ::-webkit-datetime-edit-month-field,
+// ::-webkit-datetime-edit-day-field,
+// ::-webkit-datetime-edit-year-field,
+// ::-webkit-inner-spin-button,
+// ::-webkit-calendar-picker-indicator
+
+input, textarea
+  box-sizing content-box
+
+select
+  cursor      pointer
+  user-select none
+  &[size]
+    height auto
+
+button
+input[type="button"]
+input[type="image"]
+input[type="reset"]
+input[type="submit"]
+  cursor      pointer
+  user-select none
+  &:disabled
+    cursor not-allowed
+
+// Change button focus outlines in Firefox.
+button
+input[type="button"]
+input[type="file"] > input[type="button"]
+input[type="reset"]
+input[type="submit"]
+  &::-moz-focus-inner
+    border 0
+
+// https://github.com/necolas/normalize.css/issues/319
+button[disabled]
+html input[disabled]
+  cursor not-allowed
+
+button, a.button, input, select, textarea
+  background  color_white
+  border      1px solid color_steel_blue
+  font-family font_candara
+  padding     layout_border_width / 2
+  &:disabled
+    background   color_gallery
+    border-color color_silver
+    color        color_silver
+
+option:disabled
+  background   color_gallery
+  border-color color_silver
+  color        color_silver
+
+button, a.button, input.button, input[type="button"], input[type="reset"], input[type="submit"]
+  background  color_button_bg
+  border      1px solid color_button_border
+  color       color_button
+  font-weight normal
+  padding     (layout_border_width / 2) layout_border_width
+  &:hover
+    color           color_button_hover
+    text-decoration underline
+    &:disabled
+      text-decoration none
+  &:active {}
+  &:disabled
+    background   color_gallery
+    border-color color_silver
+    color        color_silver
+    cursor       default
+    text-shadow  none
+
+input[type="image"]
+  border-width 1px
+
+/*input[type="checkbox"], input[type="radio"] {
+  margin: 0 ($layout-border-width / 2) 0 0;
+}
+
+
+// a.button, button, input.button {
+//   background-image: url(../images/buttons-ningbar.png) !important;        // Override.
+// }
+
+
+/* *
+
+
+input, button, textarea {
+  border:                 1px solid #444;
+
+  // -moz-border-radius:     20px;
+  // -webkit-border-radius:  20px;
+  // border-radius:          20px;
+
+  //
+  // http://foohack.com/2007/11/cross-browser-support-for-inline-block-styling/
+  //
+  display:                inline-block;
+  zoom:                   1;
+  *display:               inline;
+
+  margin-bottom:          1em;
+  padding:                0.5em;
+}
+input[type="text"] {
+//  width: 12.25em;
+}
+
+
+//
+// Style the search input element on WebKit browsers.
+//
+// http://anthonyshort.com.au/post/1016795820/styling-the-search-input-in-webkit
+// http://css-tricks.com/webkit-html5-search-inputs/#comment-82432
+//
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+
+  //&::-webkit-search-cancel-button,
+  &::-webkit-search-decoration, &::-webkit-search-results-button, &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+input[type="tel"] {}
+input[type="url"] {}
+input[type="email"] {}
+input[type="password"] {}
+input[type="datetime"] {}
+input[type="date"] {}
+input[type="month"] {}
+input[type="week"] {}
+input[type="time"] {}
+input[type="datetime-local"] {}
+input[type="number"] {}
+input[type="range"] {}
+input[type="color"] {}
+
+input[type="checkbox"] {
+  margin: 0.25em;
+}
+input[type="radio"] {
+  margin: 0.25em;
+}
+input[type="file"] {}
+
+//
+// Make button elements more button-like by making their text unselectable.
+//
+input[type="submit"], input[type="image"], input[type="reset"], input[type="button"], button, .button {
+  -moz-user-select:     none;
+  -webkit-user-select:  none;
+  user-select:          none;
+
+  &:hover {}
+  &:active {}
+  &:disabled {}
+}
+
+// Change button focus outlines in Firefox.
+button {
+  &::-moz-focus-inner {}
+}
+input {
+  &[type="file"] > &[type="button"], &[type="submit"], &[type="image"], &[type="reset"], &[type="button"] {
+    &::-moz-focus-inner {}
+  }
+}
+
+select {
+  border:         1px solid #444;
+  margin-bottom:  1em;
+  padding:        0.25em;
+
+  &:disabled {}
+}
+
+datalist {}
+
+optgroup {}
+option {}
+textarea {
+  resize: vertical;
+}
+
+keygen {}
+output {}
+
+/* */

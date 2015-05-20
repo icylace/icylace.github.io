@@ -1,0 +1,91 @@
+doctype html
+<!--[if lt IE 9]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+html.no-js(lang="en")<!--<![endif]-->
+
+  | {% include head %}
+
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name="viewport", content="width=device-width")
+    title Project
+    <!--[if (!IEMobile)&(lt IE 9)]>
+    script(src="http://html5shiv.googlecode.com/svn/trunk/html5.js")
+    <![endif]-->
+    link(rel="stylesheet", href="main.css")
+
+  body
+
+    | {% include header %}
+
+    .main-wrapper
+      .main
+        .main-content-wrapper
+          .main-content
+            .main-content-inner-wrapper
+
+              | {{ page.content }}
+
+          .sidebar-first
+          .sidebar-second
+
+    | {% include footer %}
+
+    script(src="vendor.js")
+    script(src="main.js")
+
+
+
+
+
+
+
+
+
+---
+layout: default
+---
+
+<div class="main-wrapper">
+  <div class="main">
+
+    <div class="main-header">
+    </div>
+
+    <div class="main-content-wrapper">
+      <div class="main-content">
+
+<div markdown="1">
+# Ron Martinez
+
+## is doing something...
+
+- [LinkedIn](http://www.linkedin.com/in/icylace)
+- [GitHub](https://github.com/icylace)
+</div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
+-->

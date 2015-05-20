@@ -1,0 +1,67 @@
+table
+  border        1px solid color_table_border
+  empty-cells   hide
+  margin-bottom layout_border_width
+  table-layout  fixed
+
+  //
+  // Based on:
+  // http://www.thisprogrammingthing.com/2014/preventing-tables-from-printing-across-pages/
+  //
+  @media only print
+    page-break-inside avoid
+
+caption
+  caption-side bottom
+  padding-top  $layout-border-width
+  text-align   center
+
+colgroup {}
+
+col {}
+
+thead
+  tr
+    border-bottom 2px solid color_table_border
+    border-top    1px solid color_table_border
+  th
+    color          color_table_heading
+    letter-spacing 1px
+    padding        (layout_border_width / 2) layout_border_width
+  tbody {}
+  tr
+    border-top: 1px solid color_table_border
+    &:nth-of-type(even)
+      background rgba(color_table_border, 0.08)
+  tfoot {}
+  tr
+    border-top 2px solid color_table_border
+  td
+    font-weight bold
+    padding     (layout_border_width / 2) layout_border_width
+
+td
+  padding layout_border_width
+  :last-child
+    margin-bottom 0
+
+tr, td, th {}
+
+tr {}
+
+td
+  border 1px solid color_table_border
+
+th
+  border      1px solid color_table_border
+  font-weight normal
+  text-align  left
+
+
+// -----------------------------------------------------------------------------
+
+
+#consultants, #centers
+  @extend %clear
+  border-bottom 0
+  width         100%

@@ -1,6 +1,53 @@
-build/
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
 
-# https://github.com/github/gitignore/blob/master/Jekyll.gitignore
-_site/
-.sass-cache/
-.jekyll-metadata
+# OS or Editor folders
+.DS_Store
+.cache
+.project
+.settings
+.tmproj
+nbproject
+Thumbs.db
+
+# Bower packages folders.
+bower_components
+
+# NPM packages folder.
+node_modules
+
+# Folder for temporary files.
+tmp
+
+# Output folder.
+build
+
+
+# ------------------------------------------------------------------------------
+#  https://github.com/github/gitignore/blob/master/Node.gitignore
+# ------------------------------------------------------------------------------
+
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+node_modules

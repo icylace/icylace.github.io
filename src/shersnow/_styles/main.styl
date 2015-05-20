@@ -1,0 +1,458 @@
+//
+// Styles are written in a generally verbose fashion for ease of readability
+// and maintainability.  Automated processing is relied upon to take care of
+// producing production-ready CSS.
+//
+// Rules are ordered according to criteria of subsequently increasing priority:
+//
+//   1.  Collect into distinct ordered groups:
+//       a.  Elements
+//       b.  Pseudo-Selectors
+//       c.  Classes
+//       d.  IDs
+//       e.  Hacks
+//       f.  Development-Oriented (e.g. diagnostic styles)
+//
+//   2.  Within each group order rules according to priority:
+//       a.  Nesting order if there is one (e.g. '.main-wrapper' before '.main').
+//       b.  Rules with multiple selectors are grouped together by similar
+//           starting selectors.
+//       c.  Increasing cascade level.
+//       d.  Increasing specificity.
+//       e.  Sibling order if there is one (e.g. '.main-header' before '.main-footer').
+//       f.  HTML document order.
+//       g.  Alphabetical order.
+//       h.  Numerical order.
+//
+// Selectors and properties are arranged alphabetically by default.
+//
+// Shorthand notations are used when they enhance readability.
+//
+// Hex notation is used for opaque color values.
+//
+// Percentages are used when defining font sizes.
+// http://www.kyleschaeffer.com/best-practices/css-font-size-em-vs-px-vs-pt-vs/
+//
+// Stylus is the preferred preprocessing language.
+//
+// In HTML element tags, attributes related to CSS are ideally order by
+// increasing CSS specificity (i.e. first "class" then "id" then "style").
+//
+
+
+@require 'vendor/*'
+@require 'base/*'
+@require '_setup'
+@require '*'
+// @require '../components/**/*'
+
+
+// -----------------------------------------------------------------------------
+//  Shame Styles
+//  http://csswizardry.com/2013/04/shame-css/
+// -----------------------------------------------------------------------------
+
+
+
+
+
+
+@import "mod-normalize";
+@import "basis";
+@import "sass/variables";
+@import "sass/elements";
+@import "sass/lists";
+@import "sass/links";
+@import "sass/forms";
+@import "sass/tables";
+@import "sass/layout";
+
+.donate {
+  margin-bottom: 1em;
+  text-align:    center;
+}
+
+
+
+
+
+
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+
+/* */
+/* *
+*,
+*:before,
+*:after {
+  border:   0 !important;
+  margin:   0 !important;
+  display:  block !important;
+  outline:  1px solid blue;
+  padding:  0 !important;
+  position: static !important;
+  float:    none !important;
+  clear:    both !important;
+  content:  none !important;
+  overflow: visible !important;
+}
+
+style, script, meta, title {
+  display:  none !important;
+}
+/* *
+#xg_body {
+  &:after, *:after {
+    content: none !important;
+  }
+}
+/* */
+
+
+
+
+// ================
+// THE ROOT ELEMENT
+// ================
+
+
+html {
+  //
+  // Show vertical scrollbar always.  This will prevent sudden page shifting as
+  // the size of the window changes.
+  //
+  // http://snippets.dzone.com/posts/show/217
+  //
+  //overflow:   -moz-scrollbars-vertical;
+  //overflow-y: scroll;
+
+  //background: $color-white;
+}
+
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+
+
+
+// ========
+// SECTIONS
+// ========
+
+
+body {
+  //background:   transparent;
+  //$bg-top-width:    1600px;
+  //$bg-top-1-height: 1634px;
+
+  //
+  // Scale the default font size to make it easy to work with. Normally the
+  // default is 16px so this will scale it to 10px.
+  //
+  // Use the golden ratio for leading.
+  //
+
+  //
+  // http://www.designbastard.com/2011/04/font-size-em-vs-px/#comment-788
+  //
+
+  @include background-size(100%);
+
+  background:   $color-body-bg $image-bg repeat fixed;
+  color:        $color-body;
+  font-family:  $body-font;
+  font-size:    $body-font-size;
+  font-weight:  300;
+  line-height:  1.4;
+
+  //
+  // http://orderedlist.com/resources/html-css/thinning-text-in-webkit-safari/
+  //
+  //-webkit-font-smoothing: antialiased;
+
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0.62);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top:     0;
+  margin-bottom:  0.5em;
+}
+
+h1 {
+  margin-bottom: $layout-border-width;
+}
+h2 {
+  font-size: 1.6em;
+}
+h3 {
+  font-size: 1.3em;
+}
+h4, h5, h6 {
+  margin-bottom: $layout-border-width / 2;
+}
+
+/* *
+section {}
+nav {}
+article {}
+aside {}
+/* */
+
+hgroup {}
+header {}
+footer {}
+
+address {
+  font-style: normal;
+  margin:     8px 0 1em;
+}
+
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+
+// ================
+// GROUPING CONTENT
+// ================
+
+
+p {
+  margin:         0 0 1em 0;
+  text-overflow:  ellipsis;
+}
+pre {
+  font-family:  monospace;
+  font-size:    100%;
+  margin:       0 0 1em 0;
+  padding:      $layout-border-width;
+
+  /* *
+  //
+  // Based on:
+  // http://perishablepress.com/press/2010/06/01/wrapping-content/
+  //
+  white-space:  pre-wrap;             // CSS 2.1
+  white-space:  pre-line;             // CSS 3.0
+  white-space:  -o-pre-wrap;          // Opera 7+
+  white-space:  -moz-pre-wrap;        // Mozilla
+  word-wrap:    break-word;           // IE 5+
+  /* */
+}
+blockquote {
+  @extend .clear;
+
+  background: #EFE;
+  font-style: normal;
+  margin:     0 0 1em 0;
+  padding:    $layout-border-width * 2;
+
+  p {}
+
+  div {
+    float: right;
+  }
+}
+
+figure {}
+
+div {}
+
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+
+// ====================
+// TEXT-LEVEL SEMANTICS
+// ====================
+
+
+em {}
+strong {
+  letter-spacing: 1px;
+}
+
+cite {}
+q {}
+dfn {
+  font-style:   italic;
+  font-weight:  bold;
+}
+abbr, acronym {
+  border-bottom:  1px dotted $color-tundora;
+  cursor:         help;
+}
+
+time {}
+
+code {
+  font-size:    100%;
+  font-family:  monospace;
+  white-space:  pre;
+}
+var {}
+samp {}
+kbd {}
+
+small {
+  font-size: 75%;
+}
+
+
+//
+// https://trac.webkit.org/wiki/Styling%20Form%20Controls
+//
+
+mark {}
+progress {}
+meter {}
+
+ruby {}
+rt {}
+rp {}
+bdo {}
+span {}
+
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+
+// =====
+// EDITS
+// =====
+
+
+/* *
+ins {
+  color:            $color-green;
+  text-decoration:  none;
+}
+del {
+  text-decoration: line-through;
+}
+/* */
+
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+
+// ================
+// EMBEDDED CONTENT
+// ================
+
+
+//
+// http://unstoppablerobotninja.com/entry/fluid-images/
+// http://html5reset.org/
+//
+img, object, embed {
+  max-width: 100%;
+}
+img::selection {
+  background: transparent;
+}
+img::-moz-selection {
+  background: transparent;
+}
+
+video {}
+
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+
+// ====================
+// INTERACTIVE ELEMENTS
+// ====================
+
+
+details {}
+command {}
+menu {}
+
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+
+//
+// Make sure nested relatively-sized elements don't get constantly bigger.
+//
+
+/* *
+li p,
+li li,
+li dt,
+li dd,
+li table,
+dd p,
+dd li,
+dd dt,
+dd dd,
+dd table,
+table p,
+table li,
+table dt,
+table dd,
+table input,
+table button,
+table select,
+table textarea,
+table table,
+fieldset input,
+fieldset button,
+fieldset select,
+fieldset textarea {
+  font-size: 100%;
+}
+
+li ol,
+li ul,
+li dl {
+  margin: 0 0 0 1.618em;
+}
+/* */
+
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+
+// ================
+// PSEUDO-SELECTORS
+// ================
+
+
+/* *
+:focus {
+  outline: 1px dotted #777;
+}
+/* */
+
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+
+// ===============
+// PSEUDO-ELEMENTS
+// ===============
+
+
+::-moz-selection {
+  background:   $color-selection-bg;
+  color:        $color-selection;
+  text-shadow:  none;
+}
+::selection {
+  background:   $color-selection-bg;
+  color:        $color-selection;
+  text-shadow:  none;
+}
