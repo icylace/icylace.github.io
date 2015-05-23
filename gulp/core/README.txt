@@ -29,12 +29,7 @@ gulp-load-plugins - Automatically load Gulp plugins.
 gulp-load-utils   - A collection of utilities.
 gulp-newer        - Only passes through newer files.
 gulp-notify       - Sends notification messages.
-
 gulp-pleeease     - Post-processes CSS.
-- TODO
-  - shift Stylus compilation to Pleeease
-    - gulp-stylus       - Transpiles Stylus into CSS.
-
 gulp-plumber      - Attempts to prevent streams from crashing.
 gulp-rename       - Renames files and folders.
 gulp-size         - Displays file sizes.
@@ -68,9 +63,13 @@ minimist          - Parses argument options.  Required by env
 
 
 TODO
+- make "compressing" flag activate "minifying" flag
+- shift Stylus compilation to Pleeease
+  - gulp-stylus       - Transpiles Stylus into CSS.
 - compare gulp-csso and gulp-pleeease
   - gulp-csso         - Minifies CSS.
 - compare pipe-joint, multipipe, and lazypipe
+  - does multipipe still have a files problem ?
   - pipe-joint        - Allows for minimal pipe notation.
 - tmp folder workflow with caching
 - get bless working
