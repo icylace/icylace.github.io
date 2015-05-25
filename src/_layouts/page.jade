@@ -1,12 +1,9 @@
----
-layout: default
----
+extends base.jade
 
-.post
-
-  header.post-header
-    h1.post-title
-      | {{ page.title }}
-
-  article.post-content
-    | {{ content }}
+block content
+  .post
+    header.post-header
+      h1.post-title
+        | {{ page.title }}
+    article.post-content
+      | {{ content }}
