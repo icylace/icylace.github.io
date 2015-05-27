@@ -1,9 +1,10 @@
 extends base.jade
 
-block content
-  .post
-    header.post-header
-      h1.post-title
-        | {{ page.title }}
-    article.post-content
-      | {{ content }}
+block baseContent
+  //- .post
+  //-   header.post-header
+  //-     h1.post-title
+  //-       block title
+  //-   article.post-content
+  //-     block content
+  block content

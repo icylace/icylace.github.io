@@ -1,6 +1,4 @@
 {
-  "in":             ["main.css", "extra.css"],
-  "out":            "main.min.css",
   "import":         true,
   "autoprefixer":   {"browsers": ["last 2 versions"]},
   "mqpacker":       false,

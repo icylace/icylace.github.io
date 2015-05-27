@@ -6,12 +6,10 @@ var lintStyles = lazy()
   .pipe(g.csslint.reporter);
 
 var minifyStyles = lazy()
-  .pipe(g.pleeease, {
-    "stylus": true
-  })
+  .pipe(g.pleeease)
   .pipe(g.rename, { suffix: '.min' });
 
 module.exports = {
   lint:   lintStyles,
-  minify: minifyStyles,
+  minify: minifyStyles
 };
