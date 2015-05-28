@@ -43,6 +43,7 @@
     "multipipe":         "^0.1.2",
     "nib":               "^1.1.0",
     "pleeease":          "^3.2.6",
+    "pleeease-cli":      "^3.2.8",
     "require-dir":       "^0.3.x",
     "run-sequence":      "^1.1.0",
     "stylus":            "^0.51.1"
