@@ -35,6 +35,8 @@
     "gulp-util":         "^3.0.4",
     "gulp-w3cjs":        "^0.3.0",
     "gulp-watch":        "^4.2.4",
+    "jade":              "^1.10.0",
+    "jshint":            "^2.7.0",
     "jshint-stylish-ex": "^0.2.0",
     "lazypipe":          "^0.2.3",
     "main-bower-files":  "^2.8.0",
@@ -43,6 +45,7 @@
     "multipipe":         "^0.1.2",
     "nib":               "^1.1.0",
     "pleeease":          "^3.2.6",
+    "pleeease-cli":      "^3.2.8",
     "require-dir":       "^0.3.x",
     "run-sequence":      "^1.1.0",
     "stylus":            "^0.51.1"
