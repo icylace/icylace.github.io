@@ -28,9 +28,6 @@ node_modules
 # Folder for temporary files.
 tmp
 
-# Output folder.
-build
-
 
 # ------------------------------------------------------------------------------
 #  https://github.com/github/gitignore/blob/master/Node.gitignore
