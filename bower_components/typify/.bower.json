@@ -1,0 +1,34 @@
+{
+  "name": "typify",
+  "description": "Runtime type-checking for JavaScript.",
+  "version": "0.2.9",
+  "homepage": "https://github.com/phadej/typify",
+  "author": "Oleg Grenrus <oleg.grenrus@iki.fi>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/phadej/typify.git"
+  },
+  "main": "dist/typify.standalone.js",
+  "keywords": [
+    "type",
+    "checking"
+  ],
+  "ignore": [
+    ".gitignore",
+    ".jshint.rc",
+    ".travis.yml",
+    "node_modules",
+    "Gruntfile.js",
+    "package.json",
+    "spec"
+  ],
+  "_release": "0.2.9",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.9",
+    "commit": "21786044fa2aaad2f131a7bdaf96c64c70bcc363"
+  },
+  "_source": "git://github.com/phadej/typify.git",
+  "_target": "0.2.x",
+  "_originalSource": "typify"
+}
