@@ -25,6 +25,9 @@ bower_components
 # NPM packages folder.
 node_modules
 
+# tup
+.tup
+
 # Folder for temporary files.
 tmp
 
