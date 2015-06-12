@@ -11,6 +11,7 @@ dest = build
 !pleeease = |> $(bin)/pleeease-compile %f to %o |>
 !stylus   = |> $(bin)/stylus %f --use nib --out %o |>
 
+: src/CNAME                 |> !copy     |> $(dest)/CNAME
 : foreach src/images/*      |> !copy     |> $(dest)/images/%b {pics}
 : foreach {pics}            |> !imagemin |> $(dest)/images/%B.min.%e
 : foreach src/_pages/*.jade |> !jade     |> $(dest)/%B.html
