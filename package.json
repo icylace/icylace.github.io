@@ -6,6 +6,7 @@
   "private":     true,
   "author":      "your name <you@email>",
   "description": "",
+  "repository":  {},
   "devDependencies": {
     "browser-sync":      "^2.7.1",
     "del":               "^1.2.0",
