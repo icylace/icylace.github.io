@@ -1,0 +1,42 @@
+html {
+  background-color: black;
+}
+
+body {
+  background-color: black;
+  background-image: url("asset/logo.png"), url("asset/header-bg.png");
+  background-position: -220px -300px, top;
+  background-repeat: no-repeat, repeat-x;
+  color: #FFF;
+  margin: 0;
+  padding-top: 9rem;
+}
+
+main {
+  background-color: black;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+  padding: 2rem;
+  width: 80vw;
+}
+
+h1,
+h2 {
+  font-family: "VT323", monospace;
+  margin-top: 0;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+a,
+a:link {
+  border-bottom: 1px solid #FF69B4;
+  color: #FFF;
+  font-family: "VT323", monospace;
+  font-size: 2rem;
+  text-decoration: none;
+}
