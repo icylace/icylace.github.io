@@ -1,3 +1,41 @@
+/* https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* Use `[aria-disabled="true"]` over `:disabled` for better accessibility. */
+[aria-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none !important;
+}
+
+/* https://developer.chrome.com/articles/inert/#visually-indicate-inert-elements */
+[inert],
+[inert] * {
+  cursor: default !important;
+  opacity: 0.5;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* https://css-tricks.com/select-an-element-with-a-non-empty-attribute/ */
+label[for]:not([for=""]) {
+  cursor: pointer;
+}
+
+/* -------------------------------------------------------------------------- */
+
 html {
   background-color: black;
 }
@@ -39,4 +77,8 @@ a:link {
   font-family: "VT323", monospace;
   font-size: 2rem;
   text-decoration: none;
+}
+
+* + li {
+  margin-top: 0.25rem;
 }
